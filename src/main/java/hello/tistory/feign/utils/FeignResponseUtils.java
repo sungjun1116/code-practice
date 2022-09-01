@@ -1,0 +1,35 @@
+package hello.tistory.feign.utils;
+
+import feign.Response;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+@Slf4j
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class FeignResponseUtils {
+    public static String getRequestBody(Response response) {
+        if (response.request().body() == null) {
+            return "";
+        }
+
+        return new String(response.request().body(), StandardCharsets.UTF_8);
+    }
+
+    public static String getResponseBody(Response response) {
+        if (response.body() == null) {
+            return "";
+        }
+
+        try (InputStream responseBodyStream = response.body().asInputStream()) {
+            return IOUtils.toString(responseBodyStream, StandardCharsets.UTF_8.name());
+        } catch (IOException e) {
+            log.error("feign response body converting error - response: {}", response, e);
+            return "";
+        }
+    }
+}
