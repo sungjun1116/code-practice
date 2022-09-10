@@ -1,4 +1,4 @@
-# exercize repository
+# exercise repository
 코딩 연습장
 
 ✨ feat : 새로운 기능에 대한 커밋  
