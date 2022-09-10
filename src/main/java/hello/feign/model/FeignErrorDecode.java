@@ -1,10 +1,10 @@
-package hello.tistory.feign.model;
+package hello.feign.model;
 
 import feign.Request;
 import feign.Response;
 import feign.RetryableException;
 import feign.codec.ErrorDecoder;
-import hello.tistory.feign.utils.FeignResponseUtils;
+import hello.feign.utils.FeignResponseUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 

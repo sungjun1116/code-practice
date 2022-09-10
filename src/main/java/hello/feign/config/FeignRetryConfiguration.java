@@ -1,4 +1,4 @@
-package hello.tistory.feign.config;
+package hello.feign.config;
 
 import feign.Retryer;
 import org.springframework.context.annotation.Bean;

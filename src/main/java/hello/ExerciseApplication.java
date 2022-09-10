@@ -1,13 +1,13 @@
-package hello.tistory;
+package hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TistoryApplication {
+public class ExerciseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TistoryApplication.class, args);
+		SpringApplication.run(ExerciseApplication.class, args);
 	}
 
 }

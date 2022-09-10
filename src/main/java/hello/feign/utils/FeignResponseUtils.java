@@ -1,4 +1,4 @@
-package hello.tistory.feign.utils;
+package hello.feign.utils;
 
 import feign.Response;
 import lombok.AccessLevel;

@@ -1,7 +1,7 @@
-package hello.tistory.feign;
+package hello.feign;
 
-import hello.tistory.feign.config.FeignRetryConfiguration;
-import hello.tistory.feign.config.HeaderConfiguration;
+import hello.feign.config.FeignRetryConfiguration;
+import hello.feign.config.HeaderConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

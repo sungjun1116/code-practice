@@ -1,7 +1,7 @@
-package hello.tistory.feign.config;
+package hello.feign.config;
 
-import hello.tistory.TistoryApplication;
-import hello.tistory.feign.model.FeignErrorDecode;
+import hello.ExerciseApplication;
+import hello.feign.model.FeignErrorDecode;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignFormatterRegistrar;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
  *
  * <p>{@link org.springframework.cloud.openfeign.FeignClientsConfiguration} 에서 어떤 Bean 들이 자동으로 등록되는지 확인 가능
  */
-@EnableFeignClients(basePackageClasses = TistoryApplication.class)
+@EnableFeignClients(basePackageClasses = ExerciseApplication.class)
 @Configuration
 public class FeignConfiguration {
 
