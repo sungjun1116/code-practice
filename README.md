@@ -1,5 +1,4 @@
-# exercise with java/spring repository
-코딩 연습장
+# exercise repository
 
 ✨ feat : 새로운 기능에 대한 커밋  
 🐛 fix : 버그 수정에 대한 커밋  
