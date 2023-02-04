@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
-import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
@@ -20,16 +20,25 @@ public class ExerciseApplication {
     public static void main(String[] args) {
         ServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
         WebServer webServer = serverFactory.getWebServer(servletContext -> {
-            servletContext.addServlet("hello", new HttpServlet() {
+            servletContext.addServlet("frontController", new HttpServlet() {
+                HelloController helloController = new HelloController();
+
                 @Override
                 protected void service(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException, IOException {
-                    String name = req.getParameter("name");
+                    // 인증, 보안, 다국어, 공통 기능
+                    if (req.getRequestURI().equals("/hello") && req.getMethod().equals(HttpMethod.GET.name())) {
+                        String name = req.getParameter("name");
 
-                    resp.setStatus(HttpStatus.OK.value());
-                    resp.setHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-                    resp.getWriter().println("Hello " + name);
+                        // 바인딩
+                        String ret = helloController.hello(name);
+
+                        resp.setContentType(MediaType.APPLICATION_JSON_VALUE);
+                        resp.getWriter().println(ret);
+                    } else {
+                        resp.setStatus(HttpStatus.NOT_FOUND.value());
+                    }
                 }
-            }).addMapping("/hello");
+            }).addMapping("/*");
         });
         webServer.start();
     }
