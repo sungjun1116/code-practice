@@ -1,6 +1,6 @@
 package hello.feign.config;
 
-import hello.ExerciseApplication;
+import hello.helloboot.ExerciseApplication;
 import hello.feign.model.FeignErrorDecode;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignFormatterRegistrar;

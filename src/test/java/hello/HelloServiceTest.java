@@ -1,5 +1,7 @@
 package hello;
 
+import hello.helloboot.HelloDecorator;
+import hello.helloboot.SimpleHelloService;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -1,5 +1,6 @@
-package hello;
+package hello.helloboot;
 
+import hello.config.MySpringBootApplication;
 import org.springframework.boot.SpringApplication;
 
 

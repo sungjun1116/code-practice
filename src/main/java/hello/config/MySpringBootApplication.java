@@ -1,6 +1,7 @@
-package hello;
+package hello.config;
 
-import org.springframework.stereotype.Component;
+
+import org.springframework.context.annotation.ComponentScan;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,6 +10,8 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Component
-public @interface MyComponent {
+//@Configuration
+@ComponentScan
+@EnableMyAutoConfiguration
+public @interface MySpringBootApplication {
 }
