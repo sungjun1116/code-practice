@@ -1,4 +1,4 @@
-package hello;
+package hello.helloboot;
 
 import hello.helloboot.HelloController;
 import org.junit.jupiter.api.Test;

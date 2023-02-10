@@ -1,4 +1,4 @@
-package hello;
+package hello.helloboot;
 
 import hello.helloboot.HelloDecorator;
 import hello.helloboot.SimpleHelloService;

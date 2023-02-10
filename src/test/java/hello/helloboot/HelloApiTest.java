@@ -1,4 +1,4 @@
-package hello;
+package hello.helloboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.client.TestRestTemplate;
