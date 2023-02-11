@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Bean;
 
 @MyAutoConfiguration
 @ConditionalMyOnClass("org.apache.catalina.startup.Tomcat")
+@EnableMyConfigurationProperties(ServerProperties.class)
 public class TomcatWebServerConfig {
-
     @Bean("tomcatWebServerFactory")
     @ConditionalOnMissingBean
     public ServletWebServerFactory servletWebServerFactory(ServerProperties properties) {

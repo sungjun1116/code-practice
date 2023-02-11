@@ -1,5 +1,6 @@
 package hello.config.autoconfig;
 
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
     private String contextPath;
     private int port;
