@@ -2,3 +2,4 @@ hello.config.autoconfig.TomcatWebServerConfig
 hello.config.autoconfig.JettyWebServerConfig
 hello.config.autoconfig.DispatcherServletConfig
 hello.config.autoconfig.PropertyPlaceholderConfig
+hello.config.autoconfig.ServerPropertiesConfig

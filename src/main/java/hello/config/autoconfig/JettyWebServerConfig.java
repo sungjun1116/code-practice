@@ -12,7 +12,10 @@ import org.springframework.context.annotation.Bean;
 public class JettyWebServerConfig {
     @Bean("jettyWebServerFactory")
     @ConditionalOnMissingBean
-    public ServletWebServerFactory servletWebServerFactory() {
-        return new JettyServletWebServerFactory();
+    public ServletWebServerFactory servletWebServerFactory(ServerProperties properties) {
+        JettyServletWebServerFactory serverFactory = new JettyServletWebServerFactory();
+        serverFactory.setContextPath(properties.getContextPath());
+        serverFactory.setPort(properties.getPort());
+        return serverFactory;
     }
 }
