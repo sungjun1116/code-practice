@@ -13,12 +13,13 @@ spring:
   jpa:
     properties:
       hibernate.format_sql: true
-  output:
-    ansi:
-      enabled: always
 logging:
   level:
     org.hibernate.type: TRACE
     org.hibernate.SQL: DEBUG
+
+
+my.name: ApplicationProperties
+contextPath: /app
 
 
