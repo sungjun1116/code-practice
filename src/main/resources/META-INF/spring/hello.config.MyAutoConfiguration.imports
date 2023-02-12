@@ -1,3 +1,4 @@
+hello.config.autoconfig.DataSourceConfig
 hello.config.autoconfig.PropertyPostProcessorConfig
 hello.config.autoconfig.PropertyPlaceholderConfig
 hello.config.autoconfig.DispatcherServletConfig
