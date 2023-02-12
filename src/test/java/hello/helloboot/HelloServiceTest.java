@@ -1,7 +1,5 @@
 package hello.helloboot;
 
-import hello.helloboot.HelloDecorator;
-import hello.helloboot.SimpleHelloService;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -10,12 +8,23 @@ class HelloServiceTest {
 
     @Test
     void simpleHelloService() {
-        SimpleHelloService helloService = new SimpleHelloService();
+        SimpleHelloService helloService = new SimpleHelloService(helloRepositoryStub);
 
         String ret = helloService.sayHello("Test");
 
         assertThat(ret).isEqualTo("Hello Test");
     }
+
+    private static HelloRepository helloRepositoryStub = new HelloRepository() {
+        @Override
+        public Hello findHello(final String name) {
+            return null;
+        }
+
+        @Override
+        public void increaseCount(final String name) {
+        }
+    };
 
     @Test
     void helloDecorator() {
