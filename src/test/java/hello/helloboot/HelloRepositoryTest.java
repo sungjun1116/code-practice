@@ -3,19 +3,24 @@ package hello.helloboot;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-@HelloBootTest
+import javax.transaction.Transactional;
+
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+
+@Transactional
+@SpringBootTest(webEnvironment = WebEnvironment.NONE)
 class HelloRepositoryTest {
     @Autowired
     HelloRepository helloRepository;
-
     @Autowired
     JdbcTemplate jdbcTemplate;
 
     @Test
     void findHelloFailed() {
-        Assertions.assertThat(helloRepository.findHello("Toby")).isNull();
+        Assertions.assertThat(helloRepository.findHello("SungJun")).isNull();
     }
     
     @Test
