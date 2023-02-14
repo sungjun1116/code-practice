@@ -1,8 +1,10 @@
 server:
+  port: 9090
   servlet:
     session:
       tracking-modes: cookie
       timeout: 1800
+    context-path: /app
 
 spring:
   profiles:
@@ -10,6 +12,8 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb
+    username: sa
+    password:
   jpa:
     properties:
       hibernate.format_sql: true
@@ -17,13 +21,3 @@ logging:
   level:
     org.hibernate.type: TRACE
     org.hibernate.SQL: DEBUG
-
-
-my.name: ApplicationProperties
-server.contextPath: /app
-server.port: 9090
-data.driver-class-name: org.h2.Driver
-data.url: jdbc:h2:mem:test
-data.username: sa
-data.password:
-
