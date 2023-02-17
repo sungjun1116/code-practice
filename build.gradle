@@ -1,14 +1,15 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.6'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id 'org.asciidoctor.convert' version '1.5.8'
 	id 'java'
+	id 'org.springframework.boot' version '3.0.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'org.asciidoctor.convert' version '1.5.8'
 }
 
 group = 'hello'
 version = '0.0.1-SNAPSHOT'
 
-targetCompatibility = 11
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -26,10 +27,7 @@ ext {
 }
 
 dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-web') {
-//		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
-	}
-//	implementation 'org.springframework.boot:spring-boot-starter-jetty'
+	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -41,7 +39,6 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	//테스트에서 lombok 사용
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
